@@ -1,0 +1,50 @@
+/*
+* Start Bootstrap - Blog Home (https://startbootstrap.com/template-overviews/blog-home)
+* Copyright 2013-2017 Start Bootstrap
+* Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *
+  */
+
+@import 'bootstrap';
+
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+p {font-size: 1em; line-height: 1.2em}
+/* Maximum height math is:
+   line-height * #oflines - 0.4
+   the 0.4 offset is to make the cutoff  look nicer */
+.lines-3{height: 3.2em;}
+.lines-6{height: 4.8em;}
+.truncate {overflow: hidden; position:relative}
+.truncate:after{
+    content:"";
+    height: 1em;
+    display: block;
+    width: 100%;
+    position:absolute;
+    background-color:white;
+    opacity: 0.8;
+    bottom: -0.3em
+}

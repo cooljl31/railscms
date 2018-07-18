@@ -1,0 +1,16 @@
+.my-4
+- @posts.each do |post|
+  /! Blog Post
+  .card.mb-4
+    = link_to post_path(post.slug)
+      img.card-img-top alt="#{post.title}" src="#{post.featured_image}"
+    .card-body
+      h2.card-title= post.title
+      .truncate.lines-6
+        p.card-text= truncate_html(post.body, :length => 250)
+      .pt-2
+        = link_to "Read More &rarr;".html_safe, post_path(post.slug), class: 'btn btn-primary'
+    .card-footer.text-muted
+      | Posted on
+      =<> post.created.to_date.to_s(:long)
+      | by #{post.author.first_name} #{post.author.last_name}

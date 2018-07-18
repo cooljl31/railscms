@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Rails Cms
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    = render 'nav'
+    /! Page Content
+    .container
+      .row
+        /! Blog Entries Column
+        .col-md-8
+          = yield
+        .col-md-4
+          = render 'sidebar'
+    = render 'footer'

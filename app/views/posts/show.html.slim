@@ -1,0 +1,26 @@
+/! Title
+h1.mt-4= @post.title
+/! Author
+p.lead
+  | by
+  =<> link_to "#{@post.author.last_name}"
+hr/
+/! Date/Time
+p
+  | Posted on
+  =<> @post.created.to_date.to_s(:long)
+hr/
+/! Preview Image
+img.img-fluid.rounded alt="#{@post.title}" src="#{@post.featured_image}" /
+hr/
+/! Post Content
+= raw @post.body
+hr/
+/! Comments Form
+.card.my-4
+  h5.card-header Leave a Comment:
+  .card-body
+    form
+      .form-group
+        textarea.form-control rows="3"
+      button.btn.btn-primary type="submit"  Submit
